@@ -2,7 +2,7 @@ import { LinkedinIcon, MailIcon, GlobeIcon } from 'lucide-react'
 
 export const Contact = () => {
   return(
-    <section className="flex flex-col items-center w-80 lg:w-96 h-96 bg-[#262626] shadow-portfolio mt-24 mx-auto text-white py-12 px-12 text-center">
+    <section className="flex flex-col items-center w-80 lg:w-96 h-96 bg-[#262626] shadow-portfolio my-24 mx-auto text-white py-12 px-12 text-center">
       <div>
         <span className="text-xl">Fale comigo</span>
         <h1 className="font-black italic uppercase text-4xl">contato</h1>
