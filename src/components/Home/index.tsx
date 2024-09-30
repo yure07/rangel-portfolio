@@ -1,6 +1,6 @@
 export const Home = () => {
   return(
-    <section className="flex flex-col-reverse lg:flex-row items-center mt-12 gap-7 text-white px-12 lg:px-24">
+    <section className="flex flex-col-reverse lg:flex-row items-center mt-36 gap-7 text-white px-12 lg:px-24">
       <div className="flex flex-col">
         <span className="text-base italic">Olá, sou o </span>
         <h1 className="text-6xl lg:text-8xl italic uppercase font-black">gabriel</h1>
