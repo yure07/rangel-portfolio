@@ -1,6 +1,6 @@
 export const About = () => {
   return(
-    <section className="flex flex-col w-full h-80 lg:justify-center bg-[#262626] p-12 lg:px-24 text-white my-20 gap-5">
+    <section className="flex flex-col w-full h-80 lg:justify-center bg-[#262626] p-12 lg:px-24 text-white mt-56 gap-5">
       <span className="font-bold text-base lg:text-2xl">Mais sobre mim</span>
       <p className="text-xs lg:text-xl text-justify">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec commodo velit. 
