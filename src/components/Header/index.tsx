@@ -9,7 +9,7 @@ export const Header = () => {
   }
 
   return(
-    <header className="w-full flex flex-row items-center justify-between py-8 px-24 text-white">
+    <header className="w-full flex flex-row items-center justify-between py-8 px-12 lg:px-24 text-white">
       <div className="flex flex-col font-black italic uppercase text-xl">
         <h1>gabriel</h1>
         <h1 className="-mt-2 ml-4">rangel</h1>
