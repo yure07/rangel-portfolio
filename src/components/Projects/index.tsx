@@ -1,8 +1,9 @@
+import { forwardRef } from 'react'
 import { CardProject } from "./components/CardProject"
 
-export const Projects = () => {
+export const Projects = forwardRef<HTMLElement>((props, ref) => {
   return(
-    <section className="flex flex-col p-12 lg:px-24 mt-40">
+    <section ref={ref} className="flex flex-col p-12 lg:px-24">
       <div className="flex flex-col text-white self-center text-center">
         <span className="text-base">5 projetos mais recentes</span>
         <h1 className="font-black italic text-5xl uppercase">projetos</h1>
@@ -61,4 +62,4 @@ export const Projects = () => {
       </div>
     </section>
   )
-}
+})

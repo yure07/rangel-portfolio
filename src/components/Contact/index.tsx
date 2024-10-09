@@ -1,8 +1,9 @@
-import { LinkedinIcon, MailIcon, GlobeIcon } from 'lucide-react'
+import { GlobeIcon, LinkedinIcon, MailIcon } from 'lucide-react'
+import { forwardRef } from 'react'
 
-export const Contact = () => {
+export const Contact = forwardRef<HTMLElement>((props, ref) => {
   return(
-    <section className="flex flex-col items-center w-80 lg:w-96 h-96 bg-[#262626] shadow-portfolio my-24 mx-auto text-white py-12 px-12 text-center">
+    <section ref={ref} className="flex flex-col items-center w-80 lg:w-96 h-96 bg-[#262626] shadow-portfolio my-24 mx-auto text-white py-12 px-12 text-center">
       <div>
         <span className="text-xl">Fale comigo</span>
         <h1 className="font-black italic uppercase text-4xl">contato</h1>
@@ -21,4 +22,4 @@ export const Contact = () => {
       </div>
     </section>
   )
-}
+})

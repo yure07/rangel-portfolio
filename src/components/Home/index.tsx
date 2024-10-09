@@ -1,6 +1,8 @@
-export const Home = () => {
+import { forwardRef } from 'react';
+
+export const Home = forwardRef<HTMLElement>((props, ref) => {
   return(
-    <section className="flex flex-col-reverse lg:flex-row items-center mt-36 gap-7 text-white px-12 lg:px-24">
+    <section ref={ref} className="flex flex-col-reverse h-[620px] lg:flex-row items-center gap-7 text-white px-12 lg:px-24" >
       <div className="flex flex-col">
         <span className="text-base lg:text-2xl italic">Olá, sou o </span>
         <h1 className="text-6xl lg:text-8xl italic uppercase font-black">gabriel</h1>
@@ -10,4 +12,4 @@ export const Home = () => {
       <div className="w-64 h-64 rounded-full shadow-portfolio lg:ml-auto"/>
     </section>
   )
-}
+})
