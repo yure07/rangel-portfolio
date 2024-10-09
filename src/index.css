@@ -5,10 +5,11 @@
 
 body {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   font-family: "Montserrat", system-ui;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: #1E1E1E;
+  overflow-x: hidden;
 }
