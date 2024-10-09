@@ -1,6 +1,7 @@
 import { MenuIcon } from 'lucide-react';
 import type { MouseEvent } from 'react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface HeaderProps {
   sectionsRefs: {
@@ -12,10 +13,17 @@ interface HeaderProps {
 }
 
 export const Header = ({ sectionsRefs }: HeaderProps) => {
+  const [currentLanguage, setCurrentLanguage] = useState<string>('pt')
   const [toggleMenu, setToggleMenu] = useState<boolean>(false)
+  const { t, i18n: { changeLanguage } } = useTranslation()
 
   const handleToggleMenu = () => {
     setToggleMenu(!toggleMenu)
+  }
+
+  const handleChangeLanguage = (newLanguage: 'pt' | 'en') => {
+    changeLanguage(newLanguage)
+    setCurrentLanguage(newLanguage)
   }
 
   const handleChangeScroll = (sectionRef: React.RefObject<HTMLElement>, e: MouseEvent<HTMLButtonElement>, nameSection?: string) => {
@@ -40,31 +48,41 @@ export const Header = ({ sectionsRefs }: HeaderProps) => {
         <ul className='flex flex-row gap-16 text-xl'>
           <li className='cursor-pointer'>
             <button type='button' onClick={(e) => handleChangeScroll(sectionsRefs.homeRef, e)}>
-              Início
+              {t('Início')}
             </button>
           </li>
           <li className='cursor-pointer'>
             <button type='button' onClick={(e) => handleChangeScroll(sectionsRefs.aboutRef, e)}>
-              Sobre mim
+              {t('Sobre mim')}
             </button>
           </li>
           <li className='cursor-pointer'>
             <button type='button' onClick={(e) => handleChangeScroll(sectionsRefs.projectsRef, e)}>
-              Projetos
+              {t('Projetos')}
             </button>
           </li>
           <li className='cursor-pointer'>
             <button type='button' onClick={(e) => handleChangeScroll(sectionsRefs.contactRef, e)}>
-              Contato
+              {t('Contato')}
             </button>
           </li>
         </ul>
       </nav>
 
       <div className='hidden lg:flex flex-row items-center gap-3 uppercase'>
-        <span className='cursor-pointer'>EN</span>
+        <button 
+          type='button' 
+          className={`cursor-pointer ${currentLanguage === 'en' && 'font-bold'}`} 
+          onClick={() => handleChangeLanguage('en')}>
+            EN
+        </button>
         <div className='w-[6px] h-[6px] bg-white rounded-full'/>
-        <span className='font-bold cursor-pointer'>PT</span>
+        <button 
+          type='button' 
+          className={`cursor-pointer ${currentLanguage === 'pt' && 'font-bold'}`}
+          onClick={() => handleChangeLanguage('pt')}>
+            PT
+        </button>
       </div>  
 
       {toggleMenu && (
@@ -72,29 +90,39 @@ export const Header = ({ sectionsRefs }: HeaderProps) => {
           <ul className='space-y-2'>
             <li className='cursor-pointer'>
               <button type='button' onClick={(e) => handleChangeScroll(sectionsRefs.homeRef, e)}>
-                Início
+                {t('Início')}
               </button>
             </li>
             <li className='cursor-pointer'>
               <button type='button' onClick={(e) => handleChangeScroll(sectionsRefs.aboutRef, e)}>
-                Sobre mim
+                {t('Sobre mim')}
               </button>
             </li>
             <li className='cursor-pointer'>
               <button type='button' onClick={(e) => handleChangeScroll(sectionsRefs.projectsRef, e)}>
-                Projetos
+                {t('Projetos')}
               </button>
             </li>
             <li className='cursor-pointer'>
               <button type='button' onClick={(e) => handleChangeScroll(sectionsRefs.contactRef, e)}>
-                Contato
+                {t('Contato')}
               </button>
             </li>
           </ul>
           <div className='flex flex-row items-center gap-3 uppercase'>
-            <span>EN</span>
+            <button 
+              type='button' 
+              className={`cursor-pointer ${currentLanguage === 'en' && 'font-bold'}`} 
+              onClick={() => handleChangeLanguage('en')}>
+                EN
+            </button>
             <div className='w-[6px] h-[6px] bg-white rounded-full'/>
-            <span className='font-bold'>PT</span>
+            <button 
+              type='button' 
+              className={`cursor-pointer ${currentLanguage === 'pt' && 'font-bold'}`}
+              onClick={() => handleChangeLanguage('pt')}>
+                PT
+            </button>
           </div>  
         </div>
       )}

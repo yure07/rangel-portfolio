@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next"
+
 interface CardProject{
   srcImg: string
   title: string
@@ -6,6 +8,7 @@ interface CardProject{
 }
 
 export const CardProject = (projectProp: CardProject) => {
+  const { t } = useTranslation()
   return(
     <div className="flex flex-col lg:flex-row gap-6 my-8 mx-auto items-center text-center">
       <div className="w-52 h-52 lg:w-44 lg:h-44 bg-[#1E1E1E] shadow-portfolio"/>
@@ -17,7 +20,7 @@ export const CardProject = (projectProp: CardProject) => {
         target="_blank" 
         rel="noopener noreferrer" 
         className="flex items-center justify-center w-28 h-8 bg-white text-black text-xs font-bold">
-          Ver projeto
+          {t('Ver projeto')}
       </a>
       </div>
     </div>

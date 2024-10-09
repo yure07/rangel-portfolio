@@ -1,12 +1,14 @@
 import { forwardRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { CardProject } from "./components/CardProject"
 
 export const Projects = forwardRef<HTMLElement>((props, ref) => {
+  const { t } = useTranslation()
   return(
     <section ref={ref} className="flex flex-col p-12 lg:px-24">
       <div className="flex flex-col text-white self-center text-center">
-        <span className="text-base">5 projetos mais recentes</span>
-        <h1 className="font-black italic text-5xl uppercase">projetos</h1>
+        <span className="text-base">{t('5 projetos mais recentes')}</span>
+        <h1 className="font-black italic text-5xl uppercase">{t('Projetos')}</h1>
       </div>
       <h2 className="font-black italic text-3xl uppercase text-white mt-16">power bi</h2>
       <div className="flex flex-row flex-wrap text-white justify-between">

@@ -1,10 +1,12 @@
 import { forwardRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const About = forwardRef<HTMLElement>((props, ref) => {
+  const { t } = useTranslation()
   return(
     <section ref={ref} className='flex h-[700px] items-center'>
       <div className="flex flex-col w-full h-80 lg:justify-center bg-[#262626] p-12 lg:px-24 text-white gap-5">
-        <span className="font-bold text-base lg:text-2xl">Mais sobre mim</span>
+        <span className="font-bold text-base lg:text-2xl">{t('Mais sobre mim')}</span>
         <p className="text-xs lg:text-xl text-justify">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec commodo velit. 
           Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
