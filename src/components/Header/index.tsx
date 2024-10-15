@@ -9,6 +9,7 @@ interface HeaderProps {
     aboutRef: React.RefObject<HTMLElement>;
     projectsRef: React.RefObject<HTMLElement>;
     contactRef: React.RefObject<HTMLElement>;
+    certificatesRef: React.RefObject<HTMLElement>
   };
 }
 
