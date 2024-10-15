@@ -25,10 +25,12 @@ export const Header = ({ sectionsRefs }: HeaderProps) => {
   const handleChangeLanguage = (newLanguage: 'pt' | 'en') => {
     changeLanguage(newLanguage)
     setCurrentLanguage(newLanguage)
+    setToggleMenu(false)
   }
 
   const handleChangeScroll = (sectionRef: React.RefObject<HTMLElement>, e: MouseEvent<HTMLButtonElement>, nameSection?: string) => {
     e.preventDefault()
+    setToggleMenu(false)
     if (sectionRef.current) {
       sectionRef.current.scrollIntoView({
         behavior: 'smooth',
@@ -58,10 +60,15 @@ export const Header = ({ sectionsRefs }: HeaderProps) => {
             </button>
           </li>
           <li className='cursor-pointer'>
+            <button type='button' onClick={(e) => handleChangeScroll(sectionsRefs.certificatesRef, e)}>
+              {t('Certificados')}
+            </button>
+          </li>
+          {/* <li className='cursor-pointer'>
             <button type='button' onClick={(e) => handleChangeScroll(sectionsRefs.projectsRef, e)}>
               {t('Projetos')}
             </button>
-          </li>
+          </li> */}
           <li className='cursor-pointer'>
             <button type='button' onClick={(e) => handleChangeScroll(sectionsRefs.contactRef, e)}>
               {t('Contato')}
@@ -100,10 +107,15 @@ export const Header = ({ sectionsRefs }: HeaderProps) => {
               </button>
             </li>
             <li className='cursor-pointer'>
+              <button type='button' onClick={(e) => handleChangeScroll(sectionsRefs.certificatesRef, e)}>
+                {t('Certificados')}
+              </button>
+            </li>
+            {/* <li className='cursor-pointer'>
               <button type='button' onClick={(e) => handleChangeScroll(sectionsRefs.projectsRef, e)}>
                 {t('Projetos')}
               </button>
-            </li>
+            </li> */}
             <li className='cursor-pointer'>
               <button type='button' onClick={(e) => handleChangeScroll(sectionsRefs.contactRef, e)}>
                 {t('Contato')}
