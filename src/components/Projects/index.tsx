@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CardProject } from "./components/CardProject"
 
-export const Projects = forwardRef<HTMLElement>((props, ref) => {
+export const Projects = forwardRef<HTMLElement>((_, ref) => {
   const { t } = useTranslation()
   return(
     <section ref={ref} className="flex flex-col p-12 lg:px-24">

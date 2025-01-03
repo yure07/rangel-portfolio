@@ -4,7 +4,7 @@ import { Contact } from "./components/Contact";
 import { Header } from "./components/Header";
 import { Home } from "./components/Home";
 import { Certificates } from "./components/Certificates";
-//import { Projects } from "./components/Projects";
+import { Projects } from "./components/Projects";
 
 function App() {
   const homeRef = useRef<HTMLElement>(null);
@@ -18,7 +18,7 @@ function App() {
      <Header sectionsRefs={{ homeRef, aboutRef, projectsRef, certificatesRef, contactRef, }}/>
      <Home ref={homeRef}/>
      <About ref={aboutRef}/>
-     {/* <Projects ref={projectsRef}/> */}
+     <Projects ref={projectsRef}/>
      <Certificates ref={certificatesRef}/>
      <Contact ref={contactRef}/>
     </div>

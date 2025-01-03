@@ -2,7 +2,7 @@ import { GlobeIcon, LinkedinIcon, MailIcon } from 'lucide-react'
 import { forwardRef } from 'react'
 import { useTranslation } from 'react-i18next'
 
-export const Contact = forwardRef<HTMLElement>((props, ref) => {
+export const Contact = forwardRef<HTMLElement>((_, ref) => {
   const { t } = useTranslation()
   return(
     <section ref={ref} className="flex flex-col items-center w-80 lg:w-96 h-96 bg-[#262626] shadow-portfolio my-24 mx-auto text-white py-12 px-12 text-center">

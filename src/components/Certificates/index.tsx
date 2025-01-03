@@ -2,14 +2,14 @@ import { forwardRef } from "react"
 import { useTranslation } from "react-i18next"
 import { CardCertificate } from "./components/CardCertificate"
 
-export const Certificates = forwardRef<HTMLElement>((props, ref) => {
+export const Certificates = forwardRef<HTMLElement>((_, ref) => {
   const { t } = useTranslation()
 
   return(
     <section ref={ref} className="flex flex-col p-12 lg:px-24">
       <div className="flex flex-col text-white self-center text-center">
         <span className="text-base">{t('Meus certificados')}</span>
-        <h1 className="font-black italic text-5xl uppercase">{t('Certificados')}</h1>
+        <h1 className="font-black italic text-4xl uppercase">{t('Certificados')}</h1>
       </div>
       <div className="flex flex-row flex-wrap text-white justify-between mt-16">
         <CardCertificate
