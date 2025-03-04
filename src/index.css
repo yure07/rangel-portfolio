@@ -13,3 +13,7 @@ body {
   background-color: #1E1E1E;
   overflow-x: hidden;
 }
+
+.loading-bar {
+  animation: loading-bar 3s ease-in-out infinite;
+}

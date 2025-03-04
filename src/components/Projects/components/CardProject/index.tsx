@@ -10,11 +10,13 @@ interface CardProject{
 export const CardProject = (projectProp: CardProject) => {
   const { t } = useTranslation()
   return(
-    <div className="flex flex-col lg:flex-row gap-6 my-8 mx-auto items-center text-center">
-      <div className="w-52 h-52 lg:w-44 lg:h-44 bg-[#1E1E1E] shadow-portfolio"/>
-      <div className="flex flex-col gap-2 lg:text-start">
-        <h3 className="uppercase text-xl font-black">{projectProp.title}</h3>
-        <p className="text-justify text-xs w-52 lg:w-64 px-2 lg:p-0">{projectProp.description}</p>
+    <div className="flex flex-col lg:flex-row gap-0 lg:gap-6 my-8 items-center text-center">
+      <div className="flex w-52 h-52 items-center">
+        <img src={projectProp.srcImg} alt="img-project"/>
+      </div>
+      <div className="flex flex-col gap-2 -mt-2 lg:mt-0 text-start">
+        <h3 className="uppercase font-black w-52">{projectProp.title}</h3>
+        <p className="text-justify text-xs w-52 lg:w-64">{projectProp.description}</p>
       <a 
         href={projectProp.link} 
         target="_blank" 
